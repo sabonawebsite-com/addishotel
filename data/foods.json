@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Doro Wat",
+    "image": "/images/food_4.png",
+    "description": "Slow-cooked chicken in berbere sauce with a boiled egg.",
+    "price": 450,
+    "category": "Stews"
+  },
+  {
+    "name": "Kitfo",
+    "image": "/images/food_3.png",
+    "description": "Minced beef seasoned with mitmita and niter kibbeh.",
+    "price": 520,
+    "category": "Meat"
+  },
+  {
+    "name": "Shiro",
+    "image": "/images/food_1.png",
+    "description": "Silky chickpea stew served with fresh injera.",
+    "price": 220,
+    "category": "Vegan"
+  },
+  {
+    "name": "Firfir",
+    "image": "/images/food_2.png",
+    "description": "Shredded injera tossed in spicy berbere sauce.",
+    "price": 180,
+    "category": "Breakfast"
+  }
+]

@@ -1,26 +1,38 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand: #b45309;
+  --bg: #fffaf3;
+  --ink: #1f1a14;
+  --card: #ffffff;
+  --line: #eadfce;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+* { box-sizing: border-box; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+a { color: inherit; text-decoration: none; }
+.site-header, .site-footer { background: var(--brand); color: #fff; padding: 1rem 2rem; }
+.site-header { display: flex; justify-content: space-between; align-items: center; }
+.site-header nav { display: flex; gap: 1.25rem; }
+.site-footer { text-align: center; font-size: 0.9rem; }
+.main { flex: 1; padding: 2rem; }
+.menu-shell { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; }
+.sidebar { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; height: fit-content; }
+.sidebar input { width: 100%; padding: 0.5rem; margin: 0.5rem 0; border: 1px solid var(--line); border-radius: 8px; }
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar li a { display: block; padding: 0.4rem 0.5rem; border-radius: 6px; }
+.sidebar li a:hover, .sidebar li a.active { background: #fde8cc; }
+.sidebar small { color: #7a6a55; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; }
+.card h3 { margin: 0 0 0.25rem; }
+.price { font-weight: 700; color: var(--brand); }
+.dish-img { width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem; }
+.skeleton { background: linear-gradient(90deg, #f1e7d8, #fbf4e9, #f1e7d8); border-radius: 12px; height: 120px; animation: pulse 1.2s infinite; }
+@keyframes pulse { 50% { opacity: 0.55; } }
+button { background: var(--brand); color: #fff; border: 0; padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; }
