@@ -1,4 +1,5 @@
 import "./globals.css";
+import Providers from "./providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -7,14 +8,15 @@ export const metadata = {
   description: "Fresh Ethiopian food, delivered.",
 };
 
-// Root layout: owns <html> and <body>, imports global CSS, wraps every route.
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="main">{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="main">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

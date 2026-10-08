@@ -2,19 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { slugify } from "@/lib/dishes";
 
-// Client component living in a layout: its state is NOT reset on navigation.
-// The filter text and the navigation counter prove the layout persists.
 export default function Sidebar({ categories }) {
   const pathname = usePathname();
   const [filter, setFilter] = useState("");
-  const [navCount, setNavCount] = useState(0);
-
-  useEffect(() => {
-    setNavCount((c) => c + 1);
-  }, [pathname]);
 
   const visible = categories.filter((c) =>
     c.toLowerCase().includes(filter.toLowerCase())
@@ -41,7 +34,7 @@ export default function Sidebar({ categories }) {
           </li>
         ))}
       </ul>
-      <small>Pages visited with this sidebar mounted: {navCount}</small>
+      <small>Sidebar stays mounted while you browse the menu.</small>
     </aside>
   );
 }

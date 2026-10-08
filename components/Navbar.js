@@ -1,8 +1,6 @@
-
 import Link from "next/link";
 
-// Static on purpose: no cookies here, so the root layout stays prerenderable.
-export default function Header() {
+export default function Navbar() {
   return (
     <header className="site-header">
       <Link href="/">
